@@ -63,7 +63,7 @@ The following table lists the configurable parameters of the Druid chart and the
 | Parameter                                | Description                                             | Default                                    |
 |------------------------------------------|---------------------------------------------------------|--------------------------------------------|
 | `image.repository`                       | container image name                                    | `apache/druid`                             |
-| `image.tag`                              | container image tag                                     | `0.18.1`                                   |
+| `image.tag`                              | container image tag                                     | `0.19.0`                                   |
 | `image.pullPolicy`                       | container pull policy                                   | `IfNotPresent`                             |
 | `image.pullSecrets`                      | image pull secrest for private repositoty               | `[]`                                       |
 | `configMap.enabled`                       | enable druid configuration as configmap                   | `true`                                     |
@@ -126,6 +126,7 @@ The following table lists the configurable parameters of the Druid chart and the
 | `historical.resources`                   | historical node resources requests & limits             | `{}`                                       |
 | `historical.podAnnotations`              | historical Deployment annotations                       | `{}`                                       |
 | `historical.nodeSelector`                | node labels for historical pod assignment               | `{}`                                       |
+| `historical.securityContext`             | custom security context for historical containers       | `{ fsGroup: 1000 }`                        |
 | `historical.tolerations`                 | historical tolerations                                  | `[]`                                       |
 | `historical.config`                       | historical node private config such as `JAVA_OPTS`       |                                            |
 | `historical.persistence.enabled`         | historical persistent enabled/disabled                  | `true`                                     |
@@ -147,6 +148,7 @@ The following table lists the configurable parameters of the Druid chart and the
 | `middleManager.resources`                | middleManager node resources requests & limits          | `{}`                                       |
 | `middleManager.podAnnotations`           | middleManager Deployment annotations                    | `{}`                                       |
 | `middleManager.nodeSelector`             | Node labels for middleManager pod assignment            | `{}`                                       |
+| `middleManager.securityContext`          | custom security context for middleManager containers    | `{ fsGroup: 1000 }`                        |
 | `middleManager.tolerations`              | middleManager tolerations                               | `[]`                                       |
 | `middleManager.config`                    | middleManager private config such as `JAVA_OPTS`         |                                            |
 | `middleManager.persistence.enabled`      | middleManager persistent enabled/disabled               | `true`                                     |
